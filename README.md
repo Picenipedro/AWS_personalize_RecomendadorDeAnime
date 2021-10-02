@@ -354,7 +354,7 @@ Este proyecto está tal cual (as-is) para probar las predicciones de Amazon Pers
 
 # Acá el video del evento
 
-[![](Images/thum_video.png)](https://www.youtube.com/watch?v=GzdMPwbVfCQ)
+[!["video"](Imagen/thum_video.png)](https://www.youtube.com/watch?v=GzdMPwbVfCQ)
 
 
 # Fuentes adicionales
