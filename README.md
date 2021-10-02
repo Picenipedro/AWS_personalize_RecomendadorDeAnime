@@ -1,6 +1,6 @@
 # Recomendador de Anime con Amazon Personalize
 
-!["aws_personalize"](imagen/animes.jpg) 
+!["aws_personalize"](Imagen/animes.jpg) 
 
 Para esta Demo utilizo una DataBase de Kaggle con nombre MyAnimeList Database 2020, la cual se encuentra disponible en este link:[https://www.kaggle.com/hernan4444/anime-recommendation-database-2020](https://www.kaggle.com/hernan4444/anime-recommendation-database-2020)
 
@@ -37,7 +37,7 @@ Fuente: https://aws.amazon.com/es/personalize/
 
 ## Y...¿Como Funciona Amazon Personalize?
 
-!["aws_personalize"](imagen/aws_personalize.png) 
+!["aws_personalize"](Imagen/aws_personalize.png) 
 
 1. Debes proporcionar datos sobre usuarios y elementos para realizar la personalización.
 
@@ -73,7 +73,7 @@ Los pason para llevar a cabo nuestro recomendador se describen a continuación, 
 9. Opcional: Rest API
 
 
-!["aws_personalize"](imagen/creacion.png)
+!["aws_personalize"](Imagen/creacion.png)
 
 ## Paso 1: Crear un DataSet Group
 
@@ -99,7 +99,7 @@ Para nuestra Demo GitHub seria:
 
 Podemos ver que costa de 5 columnas 3 de ellas las requeridas: user_id (que es el ID del usuario), ítem_id (el ID del anime) y timestamp (cuando ocurrio esta evaluación). 
 
-!["aws_personalize"](imagen/interaction.png)
+!["aws_personalize"](Imagen/interaction.png)
 
 Adicionalmente tenemos valores opcionales que son Event_value (Valor obtenido por el anime) y event_type (que es el tipo del valor, en este caso rating), estos dos últimos son opcionales pero importante para nuestro modelo. 
 
@@ -147,7 +147,7 @@ create_schema_response = personalize.create_schema(
 
 En nuestro caso los items corresponde al listado de animes, con su ID (el cual es requerido), estudio que lo creo, año de su lanzamiento, y géneros.
 
-!["aws_personalize"](imagen/items.png)
+!["aws_personalize"](Imagen/items.png)
 
 Los opcionales deben incluir categorical= true, de lo contrario Amazon personalize no utilizara este campo para entrenar el modelo, además estas características las podemos usar para los filtros, que mencionaremos después. 
 
@@ -227,19 +227,19 @@ User personalization: cosiste en un modelo al cual yo le paso un usuario y me en
 Aca tenemos un ejemplo de amazon.com donde recomienda productos basados en la historia de compras. 
 
 
-!["aws_personalize"](imagen/personalization.png)
+!["aws_personalize"](Imagen/personalization.png)
 
 ***Personalized Ranking:*** Le paso un usuario y un listado de ítems y me los entrega ordenados de acuerdo a la preferencia de ese usuario.
 
 Un ejemplo de esto son los productos que te recomienda Amazon en los correos de confirmación de compras. 
 
-!["aws_personalize"](imagen/Personalized_Ranking.png)
+!["aws_personalize"](Imagen/Personalized_Ranking.png)
 
 
 ***Similar items:*** Se basa en el concepto de filtrado colaborativo, si otro usuario compra el mismo articulo que tu, entonces el modelo te recomienda artículos que ese otro usuario ha comprado. 
 
 
-!["aws_personalize"](imagen/similar.png)
+!["aws_personalize"](Imagen/similar.png)
 
 
 Más información: [aquí](https://docs.aws.amazon.com/es_es/personalize/latest/dg/working-with-predefined-recipes.html)
@@ -265,7 +265,7 @@ Esto tarde un rato, asi que ten paciencia.
 
 Y nos entrega el siguiente cuadro con la evaluación:
 
-!["aws_personalize"](imagen/metricas.png)
+!["aws_personalize"](Imagen/metricas.png)
 
 
 *Coverage* es el porcentaje de los items que el modelo está recomendando en general. Es decir por ejemplo en SIMS, tiene un coverage de 45% es decir hay un 55% de items que no están siendo recomendados.
@@ -276,7 +276,7 @@ Y nos entrega el siguiente cuadro con la evaluación:
 
 Si quieres mejorar el coverage debes garantizar que el modelo tenga en cuenta los ítems nuevos y los antiguos con poca preferencia, esto lo puedes modificar seteando el parametro *campaignConfig* al crear la campaña.
 
-Más Información: [https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_campaign] (https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_campaign)
+Más Información: [https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_campaign](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_campaign)
 
 
 
@@ -328,22 +328,22 @@ Para ver los resultados trabajamos el notebook [05_Probando_Recomendaciones](htt
 
 ***Similar Items (SIMS)***
 
-!["aws_personalize"](imagen/sims.png)
+!["aws_personalize"](Imagen/sims.png)
 
 ***User Personalization***
 
-!["aws_personalize"](imagen/Personalization_ejm.png)
+!["aws_personalize"](Imagen/Personalization_ejm.png)
 
 ***Usando Filtros***
 
-!["aws_personalize"](imagen/filtros.png)
+!["aws_personalize"](Imagen/filtros.png)
 
 
 ## Paso 9: Opcional - Rest API  😉
 
 Rest API para POC Amazon Personalize
 
-!["aws_personalize"](imagen/api.png)
+!["aws_personalize"](Imagen/api.png)
 
 El objetivo de este proyecto es un despliegue rápido de una API RESTfull para invocar las campañas de Amazon Personalize. Esto lo haremos con Cloud Development Kit (CDK) en Python.
 
@@ -354,7 +354,7 @@ Este proyecto está tal cual (as-is) para probar las predicciones de Amazon Pers
 
 # Acá el video del evento
 
-[https://www.youtube.com/watch?v=GzdMPwbVfCQ](https://www.youtube.com/watch?v=GzdMPwbVfCQ)
+[![](Images/thum_video.png)](https://www.youtube.com/watch?v=GzdMPwbVfCQ)
 
 
 # Fuentes adicionales
